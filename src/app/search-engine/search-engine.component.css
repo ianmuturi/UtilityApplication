@@ -1,0 +1,10 @@
+.profile-image {
+    height: 150px;
+    width: 150px;
+}
+
+.card {
+    width: 200px;
+    float: left;
+    margin: 5px;
+}

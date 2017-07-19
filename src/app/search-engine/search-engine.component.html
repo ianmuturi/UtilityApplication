@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="jumbotron" style="">
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <input type="text" (keyup)="onkeyup($event)" style="width: 100%">
+                <br><br>
+                <button (click)="getUsers()" style="width: 100%" class="btn btn-primary">Search</button>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-2">
+                <p *ngIf='searchCount'>Count: {{searchCount}}</p>
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+
+
+    </div>
+</div>
+<div class="container">
+    <div>
+        <ol *ngIf="searchResult">
+            <div class="card" style="width: 20rem;" *ngFor="let user of searchResult.items">
+                <img class="profile-image" [src]="user.avatar_url" alt="Card image cap">
+                <div class="card-block">
+                    <h4 class="card-title"><a (click)="showUserDeatils(user)">{{user.login}}</a></h4>
+                </div>
+            </div>
+        </ol>
+    </div>
+</div>
